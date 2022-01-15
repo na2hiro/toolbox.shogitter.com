@@ -7,14 +7,15 @@ import Player from "~/junisen/models/Player";
 type Props = {
     log: UndoneLog;
     player: Player;
+    className?: string;
 };
-const DoneSelectButton: FunctionComponent<Props> = ({ log, player }) => {
+const DoneSelectButton: FunctionComponent<Props> = ({ log, player, className = "" }) => {
     const doneGameDispatch = useContext(DoneGameDispatchContext);
 
     let mark,
         action = "select";
     if (log.type === "undone") {
-        mark = "?";
+        mark = "？";
     } else if (log.win) {
         mark = "○";
         action = "unselect";
@@ -29,6 +30,6 @@ const DoneSelectButton: FunctionComponent<Props> = ({ log, player }) => {
             }),
         [player, log]
     );
-    return <button onClick={dispatch}>{mark}</button>;
+    return <button className={`border border-gray-300 rounded px-2 mx-0.5 ${className}`} onClick={dispatch}>{mark}</button>;
 };
 export default DoneSelectButton;

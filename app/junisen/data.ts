@@ -6,7 +6,7 @@ type Config = {
     undoneGames: [number, number][],
 }
 type ResultData = { [key: string]: { [key: string]: Config } };
-export const resultData: ResultData = {
+const resultData: ResultData = {
     "77": {
         "a": {
             "players": ["羽生善治九段", "稲葉　陽八段", "広瀬章人竜王", "佐藤康光九段", "久保利明王将", "豊島将之二冠", "深浦康市九段", "三浦弘行九段", "糸谷哲郎八段", "阿久津主税八段"],
@@ -26,6 +26,18 @@ export const resultData: ResultData = {
     },
     "80": {}
 };
+
+export function getPeriods() {
+    return Object.keys(resultData).sort().reverse();
+}
+
+export function getClasses(period: string) {
+    return Object.keys(resultData[period]).sort();
+}
+
+export function getData(period: string, clss: string) {
+    return resultData[period][clss];
+}
 
 export const setting: { [key: string]: LeagueSetting } = {
     "a": {down: 2, playoff: true},

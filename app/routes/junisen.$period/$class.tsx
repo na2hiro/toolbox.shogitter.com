@@ -4,7 +4,7 @@ import League from "~/junisen/components/League";
 import SettingContext from "~/junisen/utils/SettingContext";
 import { LoaderFunction, useLoaderData, useParams } from "remix";
 import {calcProps} from "~/junisen/utils/dataConversion";
-import {resultData, setting} from "~/junisen/data";
+import {getData, setting} from "~/junisen/data";
 
 import styles from "~/junisen/style.css";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
@@ -21,7 +21,7 @@ export function links() {
 }
 
 export const loader: LoaderFunction = ({params}) => {
-    const data = resultData[params.period!][params.class!];
+    const data = getData(params.period!, params.class!);
     const s = setting[params.class!];
     if(!data || !s) {
         throw new Response("not found", {status: 404});
@@ -51,7 +51,7 @@ export default function JunisenIndex() {
     return (
         <SettingContext.Provider value={setting}>
             <H1>{displayPeriod(params.period!)}{displayClass(params.class!)}順位戦数え上げ</H1>
-            <ul className="list-disc ml-8">
+            <ul className="list-disc ml-6">
                 <li>？ボタンをクリックすると，そこが勝利である場合の順位表と数え上げを表示します．</li>
                 <li>選んだ場合はURLに反映されているため，SNS等でシェアできます．</li>
             </ul>

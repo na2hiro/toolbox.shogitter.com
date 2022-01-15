@@ -17,7 +17,10 @@ export function links() {
 }
 
 export const meta: MetaFunction = () => {
-    return {title: "Shogi Toolbox"};
+    return {
+        title: "Shogi Toolbox",
+        viewport: "width=device-width,initial-scale=1,viewport-fit=cover"
+    };
 };
 
 type MenuItemProps = {

@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useCallback, useContext, useMemo, useState } from "react";
+import React, {FunctionComponent, useCallback, useContext, useMemo, useState, VFC} from "react";
 
 import SettingContext from "../utils/SettingContext";
 import DoneSelectButton from "./DoneSelectButton";
@@ -7,12 +7,24 @@ import PlayerTableModel from "~/junisen/models/PlayerTable";
 import Player from "~/junisen/models/Player";
 import League from "~/junisen/models/League";
 
+
+type OrderIconProps = {
+    setSort: () => void,
+    active: boolean
+}
+const OrderIcon: VFC<OrderIconProps> = ({setSort, active}) => {
+    return (
+        <button className={"border border-gray-300 rounded px-2 mx-0.5 " + (active ? "bg-gray-200" : "")}
+                onClick={setSort}>▲</button>
+    )
+}
+
 interface Props {
     model: PlayerTableModel;
     games: { [name: string]: Game[] };
 }
 
-const PlayerTable: FunctionComponent<Props> = ({ model, games }) => {
+const PlayerTable: FunctionComponent<Props> = ({model, games}) => {
     const kaisenThs = useMemo(
         () => games[model.players[0].name].map((_, i) => <th key={i}>{i + 1}回戦</th>),
         []
@@ -27,17 +39,19 @@ const PlayerTable: FunctionComponent<Props> = ({ model, games }) => {
         .sort(sort == "order" ? (p1, p2) => p1.order - p2.order : (p1, p2) => p1.rank - p2.rank);
 
     return (
-        <table>
-            <thead>
+        <div className={"overflow-x-auto"}>
+            <table>
+                <thead>
                 <tr>
                     <th>
                         昨順
-                        <button onClick={setSortByOrder}>{sort == "order" ? "▲" : "△"}</button>
+                        <OrderIcon setSort={setSortByOrder} active={sort == "order"}/>
                     </th>
                     <th>棋士</th>
                     <th>勝敗</th>
                     <th>
-                        順<button onClick={setSortByRank}>{sort == "rank" ? "▲" : "△"}</button>
+                        順
+                        <OrderIcon setSort={setSortByRank} active={sort == "rank"}/>
                     </th>
                     <th>確</th>
                     {useContext(SettingContext).playoff ? (
@@ -51,13 +65,14 @@ const PlayerTable: FunctionComponent<Props> = ({ model, games }) => {
                     <th>降</th>
                     {kaisenThs}
                 </tr>
-            </thead>
-            <tbody>
+                </thead>
+                <tbody>
                 {sortedPlayers.map(player => (
-                    <PlayerTableRow player={player} games={games[player.name]} key={player.order} />
+                    <PlayerTableRow player={player} games={games[player.name]} key={player.order}/>
                 ))}
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     );
 };
 export default PlayerTable;
@@ -67,7 +82,7 @@ interface RowProps {
     games: Game[];
 }
 
-const PlayerTableRow: FunctionComponent<RowProps> = ({ player, games }) => {
+const PlayerTableRow: FunctionComponent<RowProps> = ({player, games}) => {
     const setting = useContext(SettingContext);
     let mark = "";
     let className;
@@ -78,7 +93,7 @@ const PlayerTableRow: FunctionComponent<RowProps> = ({ player, games }) => {
         className = "bg-red-200";
         mark = "プ";
     } else if (player.countDown == player.numCombinations) {
-        className = "bg-blue-400";
+        className = "bg-blue-300";
         mark = "降";
     }
     return (
@@ -92,7 +107,7 @@ const PlayerTableRow: FunctionComponent<RowProps> = ({ player, games }) => {
             {setting.playoff && <td className="text-right">{player.countPlayoff}</td>}
             <td className="text-right">{player.countDown}</td>
             {games.map((game, i) => (
-                <PlayerTableCell game={game} player={player} key={i} />
+                <PlayerTableCell game={game} player={player} key={i}/>
             ))}
         </tr>
     );
@@ -103,10 +118,10 @@ interface CellProps {
     player: Player;
 }
 
-const PlayerTableCell: FunctionComponent<CellProps> = ({ game, player }) => {
+const PlayerTableCell: FunctionComponent<CellProps> = ({game, player}) => {
     const log = game.getLog(player);
     if (log.type === "empty") {
-        return <td />;
+        return <td/>;
     } else if (log.type === "done") {
         return (
             <td>
@@ -117,7 +132,7 @@ const PlayerTableCell: FunctionComponent<CellProps> = ({ game, player }) => {
     } else {
         return (
             <td>
-                <DoneSelectButton log={log} player={player} />
+                <DoneSelectButton log={log} player={player}/>
                 <span className="text-sm">{log.enemy.abbrev}</span>
             </td>
         );

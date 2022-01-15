@@ -1,26 +1,29 @@
-import React, { FunctionComponent } from "react";
-import LeagueModel,{PlayerResult} from "~/junisen/models/League";
+import React, {FunctionComponent} from "react";
+import LeagueModel, {PlayerResult} from "~/junisen/models/League";
 import Player from "~/junisen/models/Player";
 
 interface Props {
     combination: Array<{ players: PlayerResult[]; games: any[] }>;
     players: Player[];
 }
-const CombinationTable: FunctionComponent<Props> = ({ combination, players }) => (
-    <table>
-        <thead>
+
+const CombinationTable: FunctionComponent<Props> = ({combination, players}) => (
+    <div className={"overflow-x-auto"}>
+        <table>
+            <thead>
             <tr>
                 {players.map((player, i) => (
                     <th key={i}>{player.abbrev}</th>
                 ))}
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             {combination.map(possibility => (
-                <CombinationTableRow possibility={possibility} key={hashPossibility(possibility)} />
+                <CombinationTableRow possibility={possibility} key={hashPossibility(possibility)}/>
             ))}
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+    </div>
 );
 
 export default CombinationTable;
@@ -29,7 +32,7 @@ type RowProps = {
     possibility: { players: PlayerResult[] };
 };
 
-const hashPossibility = ({ players }: { players: PlayerResult[] }) => {
+const hashPossibility = ({players}: { players: PlayerResult[] }) => {
     return players
         .map(player =>
             player.result
@@ -40,7 +43,7 @@ const hashPossibility = ({ players }: { players: PlayerResult[] }) => {
         .join(",");
 };
 
-const CombinationTableRow: FunctionComponent<RowProps> = ({ possibility }) => (
+const CombinationTableRow: FunctionComponent<RowProps> = ({possibility}) => (
     <tr>
         {possibility.players.map((player, i) => {
             let className;
@@ -49,7 +52,7 @@ const CombinationTableRow: FunctionComponent<RowProps> = ({ possibility }) => (
             } else if (player.playoff) {
                 className = "bg-red-200";
             } else if (player.down) {
-                className = "bg-blue-400";
+                className = "bg-blue-300";
             }
             return (
                 <td key={i} className={className}>
