@@ -55,7 +55,7 @@ export default function JunisenIndex() {
                 <li>？ボタンをクリックすると，そこが勝利である場合の順位表と数え上げを表示します．</li>
                 <li>選んだ場合はURLに反映されているため，SNS等でシェアできます．</li>
             </ul>
-            <League {...props} playerTable={playerTable} key={pageId}/>
+            {typeof document != "undefined" ? <League {...props} playerTable={playerTable} key={pageId}/> : "Loading..."}
         </SettingContext.Provider>
     );
 }
