@@ -1,0 +1,28 @@
+table, tr, td, th {
+    border: 1px black solid;
+}
+
+td {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.name {
+    font-size: smaller;
+}
+
+.challenge {
+    background-color: rgb(255, 100, 100);
+}
+
+.playoff {
+    background-color: rgb(255, 200, 200);
+}
+
+.down {
+    background-color: rgb(100, 100, 255);
+}
+
+td.count {
+    text-align: right;
+}
