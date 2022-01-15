@@ -50,9 +50,6 @@ function hashValueToResults(hashValue: string) {
 }
 
 export function serializeDoneGames(selectedDoneGames: Game[]) {
-    if(selectedDoneGames.length == 0) {
-        return null;
-    }
     const v = selectedDoneGames.map(g => g.serialize().join("_")).join("__")
     return "d" + v;
 }

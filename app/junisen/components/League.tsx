@@ -51,8 +51,8 @@ const League: FunctionComponent<Props> = React.memo(
             initialDoneGames
         );
         useEffect(() => {
+            if (location.hash === "" && selectedDoneGames.length === 0) return;
             const newHash = serializeDoneGames(selectedDoneGames);
-            if(!newHash) return;
             try {
                 history.replaceState("", document.title, window.location.pathname + "#" + newHash);
             } catch (e) {
@@ -69,9 +69,14 @@ const League: FunctionComponent<Props> = React.memo(
         const model = useMemo(() => {
             const model = modelInstance;
             model.setImaginary(selectedDoneGames);
-            model.search();
+            if(undoneGames.length-selectedDoneGames.length>10) {
+                console.log("skip")
+            } else {
+                console.log("search")
+                model.search();
+            }
             return model;
-        }, [selectedDoneGames]);
+        }, [selectedDoneGames/*.map(g=>g.temp?.rank || "n").join(",")*/]);
         const onClickClear = useCallback(() => {
             dispatchDoneGames({action: "clear"});
         }, []);
@@ -91,7 +96,7 @@ const League: FunctionComponent<Props> = React.memo(
                 <PlayerTable model={playerTable} games={model.map}/>
                 <H2>結果数え上げ</H2>
                 <p>マスの中：勝-敗 星 順位</p>
-                <CombinationTable combination={model.searched} players={playerTable.players}/>
+                <CombinationTable combination={model.searched || []} players={playerTable.players}/>
             </DoneGameDispatchContext.Provider>
         );
     }

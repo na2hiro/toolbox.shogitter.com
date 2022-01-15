@@ -61,7 +61,7 @@ export default class League {
     public games: Game[] = [];
     public imaginaryGames: Game[] = [];
 
-    public searched: Array<{ players: any[]; games: any[] }>;
+    public searched?: Array<{ players: any[]; games: any[] }>;
 
     constructor(private playerTable: PlayerTable, private setting: LeagueSetting) {
         playerTable.writeOrder();
