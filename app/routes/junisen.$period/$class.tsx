@@ -2,7 +2,7 @@ import {useMemo} from "react";
 import PlayerTable from "~/junisen/models/PlayerTable";
 import League from "~/junisen/components/League";
 import SettingContext from "~/junisen/utils/SettingContext";
-import { LoaderFunction, useLoaderData, useParams } from "remix";
+import { LoaderFunction, useLoaderData, useParams} from "remix";
 import {calcProps} from "~/junisen/utils/dataConversion";
 import {getData, setting} from "~/junisen/data";
 

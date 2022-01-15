@@ -6,7 +6,6 @@ import React, {
     useMemo,
     useReducer
 } from "react";
-import queryString from "query-string";
 
 import DoneGameDispatchContext from "../utils/DoneGameDispatchContext";
 import SettingContext from "../utils/SettingContext";
@@ -18,6 +17,7 @@ import LeagueModel from "~/junisen/models/League";
 import PlayerTableModel from "~/junisen/models/PlayerTable";
 import {UndoneLog} from "~/junisen/models/Log";
 import {H2} from "../styled/heading";
+import {serializeDoneGames} from "~/junisen/utils/dataConversion";
 
 // TODO: don't SSR as it can be too big
 interface Props {
@@ -51,15 +51,14 @@ const League: FunctionComponent<Props> = React.memo(
             initialDoneGames
         );
         useEffect(() => {
-            const newHash = queryString.stringify({
-                done: JSON.stringify(selectedDoneGames.map(g => g.serialize()))
-            });
+            const newHash = serializeDoneGames(selectedDoneGames);
+            if(!newHash) return;
             try {
                 history.replaceState("", document.title, window.location.pathname + "#" + newHash);
             } catch (e) {
                 location.hash = newHash;
             }
-        });
+        }, [selectedDoneGames.map(g=>g.temp?.rank || "n").join(",")]);
         const modelInstance = useMemo(() => {
             const model = new LeagueModel(playerTable, setting);
             doneGames.forEach(game => model.add(game));
@@ -89,7 +88,7 @@ const League: FunctionComponent<Props> = React.memo(
                 <H2>順位表</H2>
                 {LeagueModel.settingToString(setting)}{" "}
                 <button className="border-gray-300 border rounded px-1 m-0.5" onClick={onClickClear}>クリア</button>
-                <PlayerTable model={playerTable} games={model.map} combination={model.searched}/>
+                <PlayerTable model={playerTable} games={model.map}/>
                 <H2>結果数え上げ</H2>
                 <p>マスの中：勝-敗 星 順位</p>
                 <CombinationTable combination={model.searched} players={playerTable.players}/>
