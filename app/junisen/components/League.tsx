@@ -17,7 +17,9 @@ import Game from "~/junisen/models/Game";
 import LeagueModel from "~/junisen/models/League";
 import PlayerTableModel from "~/junisen/models/PlayerTable";
 import {UndoneLog} from "~/junisen/models/Log";
+import { H2 } from "../styled/heading";
 
+// TODO: don't SSR as it can be too big
 interface Props {
     playerTable: PlayerTableModel;
     doneGames: Game[];
@@ -76,15 +78,16 @@ const League: FunctionComponent<Props> = React.memo(
 
         return (
             <DoneGameDispatchContext.Provider value={dispatchDoneGames}>
-                <h2>
-                    残りの対局<button onClick={onClickClear}>クリア</button>
-                </h2>
+                <H2>
+                    残りの対局
+                </H2>
+                <button className="border-gray-300 border rounded-sm px-1" onClick={onClickClear}>クリア</button>
                 <UndoneGames undoneGames={undoneGames} />
-                <h2>現在の順位表</h2>
+                <H2>順位表</H2>
                 {LeagueModel.settingToString(setting)}{" "}
-                <button onClick={onClickClear}>クリア</button>
+                <button className="border-gray-300 border rounded-sm px-1 m-0.5" onClick={onClickClear}>クリア</button>
                 <PlayerTable model={playerTable} games={model.map} combination={model.searched} />
-                <h2>順位表数え上げ</h2>
+                <H2>結果数え上げ</H2>
                 <p>マスの中：勝-敗 星 順位</p>
                 <CombinationTable combination={model.searched} players={playerTable.players} />
             </DoneGameDispatchContext.Provider>
@@ -99,15 +102,14 @@ type UndoneGamesProps = {
 };
 const UndoneGames: FunctionComponent<UndoneGamesProps> = ({ undoneGames }) => {
     return (
-        <ul>
+        <ul className="flex flex-wrap">
             {undoneGames.map(game => (
-                <li key={game.players.map(p=>p.rank).join(",")}>
+                <li key={game.players.map(p=>p.rank).join(",")} className="border border-gray-100 flex flex-col p-3 m-2 rounded-md shadow-md">
                     {`${game.players[0].name} (${game.players[0].order + 1}) `}
                     <DoneSelectButton
                         player={game.players[0]}
                         log={game.getLog(game.players[0]) as UndoneLog}
                     />
-                    {" - "}
                     <DoneSelectButton
                         player={game.players[1]}
                         log={game.getLog(game.players[1]) as UndoneLog}

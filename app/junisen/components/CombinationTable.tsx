@@ -45,11 +45,11 @@ const CombinationTableRow: FunctionComponent<RowProps> = ({ possibility }) => (
         {possibility.players.map((player, i) => {
             let className;
             if (player.challenge) {
-                className = "challenge";
+                className = "bg-red-400";
             } else if (player.playoff) {
-                className = "playoff";
+                className = "bg-red-200";
             } else if (player.down) {
-                className = "down";
+                className = "bg-blue-400";
             }
             return (
                 <td key={i} className={className}>

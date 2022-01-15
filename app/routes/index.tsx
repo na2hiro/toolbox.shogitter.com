@@ -1,6 +1,6 @@
 export default function Index() {
     return (
-        <div style={{fontFamily: "system-ui, sans-serif", lineHeight: "1.4"}}>
+        <div>
             na2hiroが作った将棋関連のツールボックス
         </div>
     );

@@ -72,13 +72,13 @@ const PlayerTableRow: FunctionComponent<RowProps> = ({ player, games }) => {
     let mark = "";
     let className;
     if (player.countChallenge == player.numCombinations) {
-        className = "challenge";
+        className = "bg-red-400";
         mark = setting.playoff ? "挑" : "昇";
     } else if (player.countPlayoff == player.numCombinations) {
-        className = "playoff";
+        className = "bg-red-200";
         mark = "プ";
     } else if (player.countDown == player.numCombinations) {
-        className = "down";
+        className = "bg-blue-400";
         mark = "降";
     }
     return (
@@ -88,9 +88,9 @@ const PlayerTableRow: FunctionComponent<RowProps> = ({ player, games }) => {
             <td>{`${player.win}-${player.lose}`}</td>
             <td>{player.rank + 1}</td>
             <td>{mark}</td>
-            <td className="count">{player.countChallenge}</td>
-            {setting.playoff && <td className="count">{player.countPlayoff}</td>}
-            <td className="count">{player.countDown}</td>
+            <td className="text-right">{player.countChallenge}</td>
+            {setting.playoff && <td className="text-right">{player.countPlayoff}</td>}
+            <td className="text-right">{player.countDown}</td>
             {games.map((game, i) => (
                 <PlayerTableCell game={game} player={player} key={i} />
             ))}
@@ -111,14 +111,14 @@ const PlayerTableCell: FunctionComponent<CellProps> = ({ game, player }) => {
         return (
             <td>
                 {typeof log.win === "undefined" ? "　" : League.getWinMark(log.win)}
-                <span className="name">{log.enemy.abbrev}</span>
+                <span className="text-sm">{log.enemy.abbrev}</span>
             </td>
         );
     } else {
         return (
             <td>
                 <DoneSelectButton log={log} player={player} />
-                <span className="name">{log.enemy.abbrev}</span>
+                <span className="text-sm">{log.enemy.abbrev}</span>
             </td>
         );
     }
