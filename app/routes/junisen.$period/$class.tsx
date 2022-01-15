@@ -54,6 +54,7 @@ export default function JunisenIndex() {
             <ul className="list-disc ml-6">
                 <li>？ボタンをクリックすると，そこが勝利である場合の順位表と数え上げを表示します．</li>
                 <li>選んだ場合はURLに反映されているため，SNS等でシェアできます．</li>
+                <li>結果の決まっていない対局が10局以上ある場合、爆発するため、探索をスキップします。</li>
             </ul>
             {typeof document != "undefined" ? <League {...props} playerTable={playerTable} key={pageId}/> : "Loading..."}
         </SettingContext.Provider>

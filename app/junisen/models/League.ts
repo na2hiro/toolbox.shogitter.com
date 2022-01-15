@@ -196,10 +196,21 @@ export default class League {
         return ret;
     }
 
+    public clear() {
+        this.searched = [];
+        this.playerTable.players.forEach(player => {
+            player.reset();
+        });
+        this.playerTable.players.forEach(player => {
+            player.numCombinations = -1;
+        });
+        this.rankPlayers();
+    }
+
     public search() {
         this.searched = [];
         this.playerTable.players.forEach(player => {
-            player.resetCounts();
+            player.reset();
         });
         const remainingGames = this.games.filter(
             game =>
