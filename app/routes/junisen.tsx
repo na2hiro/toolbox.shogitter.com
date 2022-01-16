@@ -4,11 +4,12 @@ import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayPeriod} from "~/junisen/utils/display";
 import {getPeriods} from "~/junisen/data";
+import {getJunisenMetas} from "~/junisen/utils/seoUtils";
 
 export const meta: MetaFunction = () => {
-    return {
-        title: "順位戦数え上げ | Shogi Toolbox"
-    }
+    return getJunisenMetas({
+        title: "順位戦数え上げ | Shogi Toolbox",
+    });
 };
 
 type LoaderData = { periods: string[] }
@@ -29,7 +30,7 @@ export default function JunisenIndex() {
                     {periods.map(p => <li key={p}><BoldNavLink to={p}>{displayPeriod(p)}</BoldNavLink></li>)}
                 </ul>
             </>}
-            right={<Outlet />}
+            right={<Outlet/>}
         />
     )
 }

@@ -10,6 +10,7 @@ import styles from "~/junisen/style.css";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
 import {H1} from "~/junisen/styled/heading";
 import { MetaFunction } from "@remix-run/react/routeModules";
+import {getJunisenMetas} from "~/junisen/utils/seoUtils";
 
 export function links() {
     return [
@@ -35,9 +36,8 @@ export const loader: LoaderFunction = ({params}) => {
 
 export const meta: MetaFunction = () => {
     const params = useParams();
-    return {
-        title: `${displayPeriod(params.period!)}${displayClass(params.class!)}順位戦数え上げ | Shogi Toolbox`
-    }
+    const title = `${displayPeriod(params.period!)}${displayClass(params.class!)}順位戦数え上げ | Shogi Toolbox`;
+    return getJunisenMetas({title});
 };
 export default function JunisenIndex() {
     const params = useParams();
@@ -45,8 +45,6 @@ export default function JunisenIndex() {
     const props = useMemo(() => {
         return calcProps(data.players, data.doneGames, data.undoneGames, setting);
     }, [pageId]);
-    // TODO generalize year
-    // TODO generalize class and support other classes
     const playerTable = useMemo(() => new PlayerTable(props.players), [pageId]);
     return (
         <SettingContext.Provider value={setting}>

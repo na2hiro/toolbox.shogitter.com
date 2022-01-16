@@ -3,6 +3,8 @@ import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
 import {getClasses, getPeriods} from "~/junisen/data";
+import {getJunisenMetas} from "~/junisen/utils/seoUtils";
+import { MetaFunction } from "@remix-run/react/routeModules";
 
 type LoaderData = {classes: string[], period: string, periods: string[]};
 export const loader: LoaderFunction = ({params}) => {
@@ -16,6 +18,12 @@ export const loader: LoaderFunction = ({params}) => {
         periods: getPeriods(),
         classes
     };
+};
+
+export const meta: MetaFunction = () => {
+    return getJunisenMetas({
+        title: "順位戦数え上げ | Shogi Toolbox"
+    });
 };
 
 export default function JunisenIndex() {

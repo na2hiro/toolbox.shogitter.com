@@ -19,7 +19,6 @@ import {UndoneLog} from "~/junisen/models/Log";
 import {H2, H3} from "../styled/heading";
 import {serializeDoneGames} from "~/junisen/utils/dataConversion";
 
-// TODO: don't SSR as it can be too big
 interface Props {
     playerTable: PlayerTableModel;
     doneGames: Game[];
