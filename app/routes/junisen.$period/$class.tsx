@@ -4,7 +4,7 @@ import League from "~/junisen/components/League";
 import SettingContext from "~/junisen/utils/SettingContext";
 import { LoaderFunction, useLoaderData, useParams} from "remix";
 import {calcProps} from "~/junisen/utils/dataConversion";
-import {getData, setting} from "~/junisen/data";
+import {getData, getSetting} from "~/junisen/data";
 
 import styles from "~/junisen/style.css";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
@@ -22,7 +22,7 @@ export function links() {
 
 export const loader: LoaderFunction = ({params}) => {
     const data = getData(params.period!, params.class!);
-    const s = setting[params.class!];
+    const s = getSetting(params.period!, params.class!);
     if(!data || !s) {
         throw new Response("not found", {status: 404});
     }
