@@ -2,7 +2,7 @@ import thumbnail from "~/junisen/thumbnail.png";
 import {getOpenGraphMetas, getTwitterMetas} from "~/common/utils/seoUtils";
 
 const img = {
-    url: "https://toolbox.shogitter.com" + thumbnail,
+    url: thumbnail,
     width: 676,
     height: 667
 };

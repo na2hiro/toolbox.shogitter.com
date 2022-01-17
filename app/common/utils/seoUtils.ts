@@ -1,3 +1,4 @@
+const hostName = "https://toolbox.shogitter.com";
 
 export function getTwitterMetas({title, description, img}: { title: string, description: string, img: Image }) {
     return ({
@@ -5,7 +6,7 @@ export function getTwitterMetas({title, description, img}: { title: string, desc
         "twitter:description": description,
         "twitter:card": "summary_large_image",
         "twitter:creator": "@na2hiro",
-        "twitter:image:src": img.url,
+        "twitter:image:src": img.url.startsWith("https") ? img.url : `${hostName}${img.url}`,
         "twitter:image:width": `${img.width}`,
         "twitter:image:height": `${img.height}`,
     });
@@ -20,7 +21,7 @@ export function getOpenGraphMetas({title, description, img}: { title: string, de
     return {
         "og:title": title,
         "og:site_name": "Shogi Toolbox",
-        "og:url": "https://toolbox.shogitter.com",
+        "og:url": hostName,
         "og:description": description,
         "og:type": "website",
         "og:image": img.url,
