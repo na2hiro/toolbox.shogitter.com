@@ -35,7 +35,7 @@ type CardLinkProps = {
 const CardLink: React.FC<CardLinkProps> = ({children, to, className}) => {
     return (
         <li className={"border border-gray-200 rounded-md my-4 mx-2 sm:mx-4 lg:mx-6 w-60 shadow-lg "+(className??"")}>
-            <Link to={to}>
+            <Link to={to} prefetch="intent">
                 {children}
             </Link>
         </li>
