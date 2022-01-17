@@ -1,4 +1,4 @@
-import Game, { NullGame } from "./Game";
+import Game, {NullGame} from "./Game";
 import LeagueSetting from "./LeagueSetting";
 import PlayerTable from "./PlayerTable";
 import Player from "./Player";
@@ -72,8 +72,35 @@ export default class League {
 
     public add(game: Game) {
         this.games.push(game);
-        for (let i = 0; i < game.players.length; i++) {
-            this.map[game.players[i].name].push(game);
+        if (game.players.length == 2) {
+            const overflownIndexes: number[] = [];
+            const regularIndexes: number[] = [];
+            // only works if undone games are 2 or less for each player
+            // TODO: manage holes in a separate variable
+            switch (this.map[game.players[0].name].length - this.map[game.players[1].name].length) {
+                case 0:
+                    regularIndexes.push(0, 1);
+                    break;
+                case 1:
+                    regularIndexes.push(1);
+                    overflownIndexes.push(0);
+                    break;
+                case -1:
+                    regularIndexes.push(0);
+                    overflownIndexes.push(1);
+                    break;
+            }
+            regularIndexes.forEach(i => this.map[game.players[i].name].push(game));
+            overflownIndexes.forEach(i => {
+                // Push the hole behind
+                this.map[game.players[i].name].splice(this.map[game.players[i].name].length - 1, 0, game);
+            });
+        } else {
+            if (game.players.length != 1) {
+                console.error(game);
+                throw "Invalid number of players in a game";
+            }
+            this.map[game.players[0].name].push(game);
         }
         if (game.result) {
             game.players[0].win++;
@@ -165,7 +192,7 @@ export default class League {
             players[players.length - 1 - i].countDown++;
         }
 
-        const ret: Possibility = { players: [], games: [] };
+        const ret: Possibility = {players: [], games: []};
         for (let i = 0; i < this.playerTable.players.length; i++) {
             const player = this.playerTable.players[i];
             ret.players.push({
