@@ -4,7 +4,7 @@ import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayPeriod} from "~/junisen/utils/display";
 import {getPeriods} from "~/junisen/data";
-import {getJunisenMetas} from "~/junisen/utils/seoUtils";
+import {getJunisenMetas} from "~/junisen/utils/junisenMetas";
 
 export const meta: MetaFunction = () => {
     return getJunisenMetas({

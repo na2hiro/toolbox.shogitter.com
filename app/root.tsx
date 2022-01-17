@@ -11,15 +11,27 @@ import {
 import type {MetaFunction} from "remix";
 import styles from "./tailwind.css";
 import { FunctionComponent } from "react";
+import {getOpenGraphMetas, getTwitterMetas} from "~/common/utils/seoUtils";
+import appThumbnail from "~/app-thumbnail.png";
 
 export function links() {
     return [{ rel: "stylesheet", href: styles }];
 }
 
 export const meta: MetaFunction = () => {
+    const title = "Shogi Toolbox";
+    const setting = {
+        title, description: "将棋好きのためのツール集です（予定）", img: {
+            url: appThumbnail,
+            width: 375,
+            height: 380
+        }
+    };
     return {
-        title: "Shogi Toolbox",
-        viewport: "width=device-width,initial-scale=1,viewport-fit=cover"
+        title,
+        viewport: "width=device-width,initial-scale=1,viewport-fit=cover",
+        ...getTwitterMetas(setting),
+        ...getOpenGraphMetas(setting),
     };
 };
 

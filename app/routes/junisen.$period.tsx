@@ -3,8 +3,8 @@ import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
 import {getClasses, getPeriods} from "~/junisen/data";
-import {getJunisenMetas} from "~/junisen/utils/seoUtils";
 import { MetaFunction } from "@remix-run/react/routeModules";
+import {getJunisenMetas} from "~/junisen/utils/junisenMetas";
 
 type LoaderData = {classes: string[], period: string, periods: string[]};
 export const loader: LoaderFunction = ({params}) => {

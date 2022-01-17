@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "remix";
 import thumbnail from "../junisen/thumbnail.png";
 import {H1} from "~/junisen/styled/heading";
-import {RemixableScript} from "~/components/RemixableScript";
+import {RemixableScript} from "~/common/components/RemixableScript";
 
 export default function Index() {
     return (
