@@ -1,4 +1,4 @@
-import {Link, LoaderFunction, Outlet, useLoaderData } from "remix";
+import {LoaderFunction, Outlet, useLoaderData } from "remix";
 import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
