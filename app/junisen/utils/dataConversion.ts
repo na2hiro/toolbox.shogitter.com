@@ -2,7 +2,7 @@ import Player from "~/junisen/models/Player";
 import LeagueSetting from "~/junisen/models/LeagueSetting";
 import Game from "../models/Game";
 
-export function calcProps(names: string[], doneGames: number[][], undoneGames: number[][], setting: LeagueSetting) {
+export function calcProps(setting: LeagueSetting, names: string[], doneGames: number[][], undoneGames: number[][], defaultDoneGames: number[][] = []) {
     const players = names.map(function (n) {
         return new Player(n);
     });
@@ -19,6 +19,8 @@ export function calcProps(names: string[], doneGames: number[][], undoneGames: n
             initialDoneGames = toP(indices)
                 .map(Game.done)
                 .filter(game => undone.some(undoneGame => undoneGame.sameMatch(game)));
+        } else {
+            initialDoneGames = toP(defaultDoneGames).map(Game.done);
         }
     } catch (e) {
         // ignore

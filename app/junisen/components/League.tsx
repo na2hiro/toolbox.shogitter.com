@@ -1,4 +1,5 @@
 import React, {
+    Fragment,
     FunctionComponent,
     useCallback,
     useContext,
@@ -121,8 +122,8 @@ const UndoneGames: FunctionComponent<UndoneGamesProps> = ({undoneGames, league})
     return (
         <>
             {
-                kvs.map(([idx, games]) => (
-                    <>
+                kvs.map(([idx, games], i) => (
+                    <Fragment key={i}>
                         {kvs.length > 1 && (
                             <H3>
                                 {idx}回戦
@@ -148,7 +149,7 @@ const UndoneGames: FunctionComponent<UndoneGamesProps> = ({undoneGames, league})
                                 ))}
                             </ul>
                         </div>
-                    </>
+                    </Fragment>
                 ))
             }
         </>
