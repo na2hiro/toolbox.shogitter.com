@@ -1,0 +1,462 @@
+<svg class="railroad-diagram" width="721.5" height="332" viewBox="0 0 721.5 332" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g transform="translate(.5 .5)">
+        <g>
+            <path d="M20 141v20m10 -20v20m-10 -10h20"></path>
+        </g>
+        <path d="M40 151h10"></path>
+        <g class="comment ">
+            <path d="M50 151h0"></path>
+            <path d="M95 151h0"></path>
+            <text x="72.5" y="156" class="comment"> 指し手 </text>
+        </g>
+        <path d="M95 151h10"></path>
+        <g>
+            <path d="M105 151h0"></path>
+            <path d="M282 151h0"></path>
+            <path d="M105 151h20"></path>
+            <g>
+                <path d="M125 151h0"></path>
+                <path d="M262 151h0"></path>
+                <g>
+                    <path d="M125 151h0"></path>
+                    <path d="M193.5 151h0"></path>
+                    <path d="M125 151a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M145 121h0"></path>
+                        <path d="M173.5 121h0"></path>
+                        <rect x="145" y="110" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="125">４</text>
+                    </g>
+                    <path d="M173.5 121a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                    <path d="M125 151a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M145 91h0"></path>
+                        <path d="M173.5 91h0"></path>
+                        <rect x="145" y="80" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="95">３</text>
+                    </g>
+                    <path d="M173.5 91a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                    <path d="M125 151a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M145 61h0"></path>
+                        <path d="M173.5 61h0"></path>
+                        <rect x="145" y="50" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="65">２</text>
+                    </g>
+                    <path d="M173.5 61a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                    <path d="M125 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M145 31h0"></path>
+                        <path d="M173.5 31h0"></path>
+                        <rect x="145" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="35">１</text>
+                    </g>
+                    <path d="M173.5 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+                    <path d="M125 151h20"></path>
+                    <g class="terminal ">
+                        <path d="M145 151h0"></path>
+                        <path d="M173.5 151h0"></path>
+                        <rect x="145" y="140" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="155">５</text>
+                    </g>
+                    <path d="M173.5 151h20"></path>
+                    <path d="M125 151a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M145 181h0"></path>
+                        <path d="M173.5 181h0"></path>
+                        <rect x="145" y="170" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="185">６</text>
+                    </g>
+                    <path d="M173.5 181a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                    <path d="M125 151a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M145 211h0"></path>
+                        <path d="M173.5 211h0"></path>
+                        <rect x="145" y="200" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="215">７</text>
+                    </g>
+                    <path d="M173.5 211a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                    <path d="M125 151a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M145 241h0"></path>
+                        <path d="M173.5 241h0"></path>
+                        <rect x="145" y="230" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="245">８</text>
+                    </g>
+                    <path d="M173.5 241a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                    <path d="M125 151a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M145 271h0"></path>
+                        <path d="M173.5 271h0"></path>
+                        <rect x="145" y="260" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="159.25" y="275">９</text>
+                    </g>
+                    <path d="M173.5 271a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+                </g>
+                <g>
+                    <path d="M193.5 151h0"></path>
+                    <path d="M262 151h0"></path>
+                    <path d="M193.5 151a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 121h0"></path>
+                        <path d="M242 121h0"></path>
+                        <rect x="213.5" y="110" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="125">四</text>
+                    </g>
+                    <path d="M242 121a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                    <path d="M193.5 151a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 91h0"></path>
+                        <path d="M242 91h0"></path>
+                        <rect x="213.5" y="80" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="95">三</text>
+                    </g>
+                    <path d="M242 91a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                    <path d="M193.5 151a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 61h0"></path>
+                        <path d="M242 61h0"></path>
+                        <rect x="213.5" y="50" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="65">二</text>
+                    </g>
+                    <path d="M242 61a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                    <path d="M193.5 151a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 31h0"></path>
+                        <path d="M242 31h0"></path>
+                        <rect x="213.5" y="20" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="35">一</text>
+                    </g>
+                    <path d="M242 31a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+                    <path d="M193.5 151h20"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 151h0"></path>
+                        <path d="M242 151h0"></path>
+                        <rect x="213.5" y="140" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="155">五</text>
+                    </g>
+                    <path d="M242 151h20"></path>
+                    <path d="M193.5 151a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 181h0"></path>
+                        <path d="M242 181h0"></path>
+                        <rect x="213.5" y="170" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="185">六</text>
+                    </g>
+                    <path d="M242 181a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                    <path d="M193.5 151a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 211h0"></path>
+                        <path d="M242 211h0"></path>
+                        <rect x="213.5" y="200" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="215">七</text>
+                    </g>
+                    <path d="M242 211a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                    <path d="M193.5 151a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 241h0"></path>
+                        <path d="M242 241h0"></path>
+                        <rect x="213.5" y="230" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="245">八</text>
+                    </g>
+                    <path d="M242 241a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                    <path d="M193.5 151a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+                    <g class="terminal ">
+                        <path d="M213.5 271h0"></path>
+                        <path d="M242 271h0"></path>
+                        <rect x="213.5" y="260" width="28.5" height="22" rx="10" ry="10"></rect>
+                        <text x="227.75" y="275">九</text>
+                    </g>
+                    <path d="M242 271a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+                </g>
+            </g>
+            <path d="M262 151h20"></path>
+            <path d="M105 151a10 10 0 0 1 10 10v130a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M125 301h54.25"></path>
+                <path d="M207.75 301h54.25"></path>
+                <rect x="179.25" y="290" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="193.5" y="305">同</text>
+            </g>
+            <path d="M262 301a10 10 0 0 0 10 -10v-130a10 10 0 0 1 10 -10"></path>
+        </g>
+        <g>
+            <path d="M282 151h0"></path>
+            <path d="M467.5 151h0"></path>
+            <path d="M282 151a10 10 0 0 0 10 -10v-89a10 10 0 0 1 10 -10h58.5"></path>
+            <path d="M380.5 260h67a10 10 0 0 0 10 -10v-89a10 10 0 0 1 10 -10"></path>
+            <path d="M282 151h10"></path>
+            <g>
+                <path d="M292 151h0"></path>
+                <path d="M360.5 151h0"></path>
+                <path d="M292 151a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                <g class="terminal ">
+                    <path d="M312 121h0"></path>
+                    <path d="M340.5 121h0"></path>
+                    <rect x="312" y="110" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="125">桂</text>
+                </g>
+                <path d="M340.5 121a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                <path d="M292 151a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                <g class="terminal ">
+                    <path d="M312 91h0"></path>
+                    <path d="M340.5 91h0"></path>
+                    <rect x="312" y="80" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="95">香</text>
+                </g>
+                <path d="M340.5 91a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                <path d="M292 151a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                <g class="terminal ">
+                    <path d="M312 61h0"></path>
+                    <path d="M340.5 61h0"></path>
+                    <rect x="312" y="50" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="65">歩</text>
+                </g>
+                <path d="M340.5 61a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                <path d="M292 151h20"></path>
+                <g class="terminal ">
+                    <path d="M312 151h0"></path>
+                    <path d="M340.5 151h0"></path>
+                    <rect x="312" y="140" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="155">銀</text>
+                </g>
+                <path d="M340.5 151h20"></path>
+                <path d="M292 151a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M312 181h0"></path>
+                    <path d="M340.5 181h0"></path>
+                    <rect x="312" y="170" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="185">金</text>
+                </g>
+                <path d="M340.5 181a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                <path d="M292 151a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M312 211h0"></path>
+                    <path d="M340.5 211h0"></path>
+                    <rect x="312" y="200" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="215">角</text>
+                </g>
+                <path d="M340.5 211a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                <path d="M292 151a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M312 241h0"></path>
+                    <path d="M340.5 241h0"></path>
+                    <rect x="312" y="230" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="245">飛</text>
+                </g>
+                <path d="M340.5 241a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+                <path d="M292 151a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M312 271h0"></path>
+                    <path d="M340.5 271h0"></path>
+                    <rect x="312" y="260" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="326.25" y="275">玉</text>
+                </g>
+                <path d="M340.5 271a10 10 0 0 0 10 -10v-100a10 10 0 0 1 10 -10"></path>
+            </g>
+            <path d="M360.5 151a10 10 0 0 1 10 10v89a10 10 0 0 0 10 10"></path>
+            <path d="M360.5 42a10 10 0 0 1 10 10v89a10 10 0 0 0 10 10"></path>
+            <g>
+                <path d="M380.5 151h0"></path>
+                <path d="M457.5 151h0"></path>
+                <path d="M380.5 151a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                <g class="terminal ">
+                    <path d="M400.5 121h0"></path>
+                    <path d="M437.5 121h0"></path>
+                    <rect x="400.5" y="110" width="37" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="125">成香</text>
+                </g>
+                <path d="M437.5 121a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                <path d="M380.5 151a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                <g class="terminal ">
+                    <path d="M400.5 91h4.25"></path>
+                    <path d="M433.25 91h4.25"></path>
+                    <rect x="404.75" y="80" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="95">と</text>
+                </g>
+                <path d="M437.5 91a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                <path d="M380.5 151h20"></path>
+                <g class="terminal ">
+                    <path d="M400.5 151h0"></path>
+                    <path d="M437.5 151h0"></path>
+                    <rect x="400.5" y="140" width="37" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="155">成桂</text>
+                </g>
+                <path d="M437.5 151h20"></path>
+                <path d="M380.5 151a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M400.5 181h0"></path>
+                    <path d="M437.5 181h0"></path>
+                    <rect x="400.5" y="170" width="37" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="185">成銀</text>
+                </g>
+                <path d="M437.5 181a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10"></path>
+                <path d="M380.5 151a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M400.5 211h4.25"></path>
+                    <path d="M433.25 211h4.25"></path>
+                    <rect x="404.75" y="200" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="215">馬</text>
+                </g>
+                <path d="M437.5 211a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10"></path>
+                <path d="M380.5 151a10 10 0 0 1 10 10v70a10 10 0 0 0 10 10"></path>
+                <g class="terminal ">
+                    <path d="M400.5 241h4.25"></path>
+                    <path d="M433.25 241h4.25"></path>
+                    <rect x="404.75" y="230" width="28.5" height="22" rx="10" ry="10"></rect>
+                    <text x="419" y="245">竜</text>
+                </g>
+                <path d="M437.5 241a10 10 0 0 0 10 -10v-70a10 10 0 0 1 10 -10"></path>
+            </g>
+            <path d="M457.5 151h10"></path>
+        </g>
+        <g>
+            <path d="M467.5 151h0"></path>
+            <path d="M536 151h0"></path>
+            <path d="M467.5 151h20"></path>
+            <g>
+                <path d="M487.5 151h28.5"></path>
+            </g>
+            <path d="M516 151h20"></path>
+            <path d="M467.5 151a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M487.5 171h0"></path>
+                <path d="M516 171h0"></path>
+                <rect x="487.5" y="160" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="501.75" y="175">右</text>
+            </g>
+            <path d="M516 171a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+            <path d="M467.5 151a10 10 0 0 1 10 10v30a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M487.5 201h0"></path>
+                <path d="M516 201h0"></path>
+                <rect x="487.5" y="190" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="501.75" y="205">直</text>
+            </g>
+            <path d="M516 201a10 10 0 0 0 10 -10v-30a10 10 0 0 1 10 -10"></path>
+            <path d="M467.5 151a10 10 0 0 1 10 10v60a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M487.5 231h0"></path>
+                <path d="M516 231h0"></path>
+                <rect x="487.5" y="220" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="501.75" y="235">左</text>
+            </g>
+            <path d="M516 231a10 10 0 0 0 10 -10v-60a10 10 0 0 1 10 -10"></path>
+        </g>
+        <g>
+            <path d="M536 151h0"></path>
+            <path d="M604.5 151h0"></path>
+            <path d="M536 151h20"></path>
+            <g>
+                <path d="M556 151h28.5"></path>
+            </g>
+            <path d="M584.5 151h20"></path>
+            <path d="M536 151a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M556 171h0"></path>
+                <path d="M584.5 171h0"></path>
+                <rect x="556" y="160" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="570.25" y="175">上</text>
+            </g>
+            <path d="M584.5 171a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+            <path d="M536 151a10 10 0 0 1 10 10v30a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M556 201h0"></path>
+                <path d="M584.5 201h0"></path>
+                <rect x="556" y="190" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="570.25" y="205">寄</text>
+            </g>
+            <path d="M584.5 201a10 10 0 0 0 10 -10v-30a10 10 0 0 1 10 -10"></path>
+            <path d="M536 151a10 10 0 0 1 10 10v60a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M556 231h0"></path>
+                <path d="M584.5 231h0"></path>
+                <rect x="556" y="220" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="570.25" y="235">引</text>
+            </g>
+            <path d="M584.5 231a10 10 0 0 0 10 -10v-60a10 10 0 0 1 10 -10"></path>
+        </g>
+        <g>
+            <path d="M604.5 151h0"></path>
+            <path d="M681.5 151h0"></path>
+            <path d="M604.5 151h20"></path>
+            <g>
+                <path d="M624.5 151h37"></path>
+            </g>
+            <path d="M661.5 151h20"></path>
+            <path d="M604.5 151a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M624.5 171h4.25"></path>
+                <path d="M657.25 171h4.25"></path>
+                <rect x="628.75" y="160" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="643" y="175">成</text>
+            </g>
+            <path d="M661.5 171a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10"></path>
+            <path d="M604.5 151a10 10 0 0 1 10 10v30a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M624.5 201h0"></path>
+                <path d="M661.5 201h0"></path>
+                <rect x="624.5" y="190" width="37" height="22" rx="10" ry="10"></rect>
+                <text x="643" y="205">不成</text>
+            </g>
+            <path d="M661.5 201a10 10 0 0 0 10 -10v-30a10 10 0 0 1 10 -10"></path>
+            <path d="M604.5 151a10 10 0 0 1 10 10v60a10 10 0 0 0 10 10"></path>
+            <g class="terminal ">
+                <path d="M624.5 231h4.25"></path>
+                <path d="M657.25 231h4.25"></path>
+                <rect x="628.75" y="220" width="28.5" height="22" rx="10" ry="10"></rect>
+                <text x="643" y="235">打</text>
+            </g>
+            <path d="M661.5 231a10 10 0 0 0 10 -10v-60a10 10 0 0 1 10 -10"></path>
+        </g>
+        <path d="M 681.5 151 h 20 m -10 -10 v 20 m 10 -20 v 20"></path>
+    </g>
+    <style>
+        svg {
+        background-color: hsl(30,20%,95%);
+        }
+        path {
+        stroke-width: 3;
+        stroke: black;
+        fill: rgba(0,0,0,0);
+        }
+        text {
+        font: bold 14px monospace;
+        text-anchor: middle;
+        white-space: pre;
+        }
+        text.diagram-text {
+        font-size: 12px;
+        }
+        text.diagram-arrow {
+        font-size: 16px;
+        }
+        text.label {
+        text-anchor: start;
+        }
+        text.comment {
+        font: italic 12px monospace;
+        }
+        g.non-terminal text {
+        /&#42;font-style: italic;&#42;/
+        }
+        rect {
+        stroke-width: 3;
+        stroke: black;
+        fill: hsl(120,100%,90%);
+        }
+        rect.group-box {
+        stroke: gray;
+        stroke-dasharray: 10 5;
+        fill: none;
+        }
+        path.diagram-text {
+        stroke-width: 3;
+        stroke: black;
+        fill: white;
+        cursor: help;
+        }
+        g.diagram-text:hover path.diagram-text {
+        fill: #eee;
+        }</style>
+</svg>

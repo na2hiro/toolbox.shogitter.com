@@ -39,7 +39,7 @@ type MenuItemProps = {
     to: string;
 }
 const MenuItem: FunctionComponent<MenuItemProps> = ({to, children}) => {
-    return <NavLink to={to} prefetch="intent" className={({isActive})=>`flex items-center px-2 hover:bg-blue-600 ${isActive?"bg-blue-600":""}`}>{children}</NavLink>
+    return <NavLink to={to} prefetch="intent" className={({isActive})=>`flex items-center px-2 hover:bg-blue-600 ${isActive?"bg-blue-600":""} text-center`} style={{wordBreak: "keep-all"}}>{children}</NavLink>
 }
 
 export default function App() {
@@ -54,7 +54,8 @@ export default function App() {
         <body>
         <div className="flex items-stretch bg-blue-700 text-white shadow-lg mb-2">
             <Link className="p-3 font-bold font-serif text-2xl shadow hover:bg-blue-600 items-center" to="/" prefetch="intent">Shogi Toolbox</Link>
-            <MenuItem to="/junisen">順位戦数え上げ</MenuItem>
+            <MenuItem to="/junisen">順位戦&#x200a;数え上げ</MenuItem>
+            <MenuItem to="/kifu-abbrev-input">棋譜&#x200a;略記入力</MenuItem>
         </div>
         <Outlet/>
         <ScrollRestoration/>
