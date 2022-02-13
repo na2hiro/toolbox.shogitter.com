@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "remix-app-template",
+  "name": "toolbox.shogitter.com",
   "description": "",
   "license": "",
   "scripts": {
@@ -14,27 +14,29 @@
     "start": "npm run dev:wrangler"
   },
   "dependencies": {
+    "@remix-run/cloudflare-pages": "^1.1.1",
     "@remix-run/react": "^1.1.1",
     "autoprefixer": "^10.4.2",
+    "json-kifu-format": "^1.2.9",
     "prettier": "^2.5.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "remix": "^1.1.1",
-    "@remix-run/cloudflare-pages": "^1.1.1"
+    "shogi.js": "^2.0.5"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^3.2.0",
     "@remix-run/dev": "^1.1.1",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
     "concurrently": "^7.0.0",
-    "@cloudflare/workers-types": "^3.2.0",
     "cross-env": "^7.0.3",
     "esbuild": "0.13.14",
     "npm-run-all": "^4.1.5",
-    "wrangler": "alpha",
     "postcss": "^8.4.5",
     "tailwindcss": "^3.0.15",
-    "typescript": "^4.1.2"
+    "typescript": "^4.1.2",
+    "wrangler": "alpha"
   },
   "engines": {
     "node": ">=14"

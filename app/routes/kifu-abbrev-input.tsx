@@ -2,6 +2,13 @@ import {useState} from "react";
 import svg1 from "../kifu-abbrev-input/1.svg";
 import svg2 from "../kifu-abbrev-input/2.svg";
 import {H1, H2} from "~/junisen/styled/heading";
+import {MetaFunction} from "remix";
+
+export const meta: MetaFunction = () => {
+    return {
+        title: "棋譜略記入力 | Shogi Toolbox",
+    }
+}
 
 const kinds: { [kind: string]: string } = {
     "FU": "歩",
@@ -98,10 +105,14 @@ export default function KifuAbbrevInput() {
         <div className="m-2">
             <H1>棋譜略記入力(仮)</H1>
             <div className="flex h-52 flex-col sm:flex-row">
-                <textarea autoFocus className="flex-1 border-gray-500 border-solid border p-1 shadow-md rounded-t sm:rounded-l sm:rounded-r-none -mb-[1px] sm:mb-0 sm:-mr-[1px]" value={text} onInput={(e)=>{
-                    setText(e.target.value);
+                <textarea autoFocus
+                          className="flex-1 border-gray-500 border-solid border p-1 shadow-md rounded-t sm:rounded-l sm:rounded-r-none -mb-[1px] sm:mb-0 sm:-mr-[1px]"
+                          value={text} onInput={(e) => {
+                    setText(e.currentTarget.value);
                 }}/>
-                <textarea className="flex-1 whitespace-pre-wrap border-gray-500 border-solid border p-1 shadow-md rounded-b sm:rounded-r sm:rounded-l-none" readOnly value={convert(text)}/>
+                <textarea
+                    className="flex-1 whitespace-pre-wrap border-gray-500 border-solid border p-1 shadow-md rounded-b sm:rounded-r sm:rounded-l-none"
+                    readOnly value={convert(text)}/>
             </div>
             <H2>使い方</H2>
             <p>棋譜ってこんな感じですよね：</p>
