@@ -9,7 +9,7 @@ import {getData, getSetting} from "~/junisen/data";
 import styles from "~/junisen/style.css";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
 import {H1} from "~/junisen/styled/heading";
-import {MetaFunction} from "@remix-run/react/routeModules";
+import {MetaFunction, ShouldReloadFunction} from "@remix-run/react/routeModules";
 import {getJunisenMetas} from "~/junisen/utils/junisenMetas";
 
 export function links() {
@@ -20,6 +20,17 @@ export function links() {
         }
     ];
 }
+export const unstable_shouldReload: ShouldReloadFunction =
+    ({
+         // same params that go to `loader` and `action`
+         params,
+         // a possible form submission that caused this to be reloaded
+         submission,
+         // the next URL being used to render this page
+         url,
+         // the previous URL used to render this page
+         prevUrl,
+     }) => url.pathname !== prevUrl.pathname;
 
 export const loader: LoaderFunction = ({params}) => {
     const data = getData(params.period!, params.class!);

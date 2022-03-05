@@ -1,9 +1,9 @@
-import {LoaderFunction, Outlet, redirect, useLoaderData} from "remix";
+import {HeadersFunction, LoaderFunction, Outlet, redirect, useLoaderData} from "remix";
 import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
 import {getClasses, getPeriods} from "~/junisen/data";
-import {MetaFunction} from "@remix-run/react/routeModules";
+import {MetaFunction, ShouldReloadFunction} from "@remix-run/react/routeModules";
 import {getJunisenMetas} from "~/junisen/utils/junisenMetas";
 
 type LoaderData = { classes: string[], period: string, periods: string[] };
@@ -22,6 +22,15 @@ export const loader: LoaderFunction = ({params, request}) => {
         classes
     };
 };
+
+export const headers: HeadersFunction = () => {
+    return {
+        "Cache-Control": "max-age=3600"
+    }
+}
+
+export const unstable_shouldReload: ShouldReloadFunction =
+    ({ params, submission, url, prevUrl }) => url.pathname !== prevUrl.pathname;
 
 export const meta: MetaFunction = () => {
     return getJunisenMetas({

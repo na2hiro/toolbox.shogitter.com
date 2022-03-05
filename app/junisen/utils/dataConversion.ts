@@ -14,8 +14,8 @@ export function calcProps(setting: LeagueSetting, names: string[], doneGames: nu
 
     let initialDoneGames: Game[] = [];
     try {
-        if (typeof location !== "undefined" && location.hash) {
-            const indices = hashValueToResults(location.hash);
+        if (typeof location !== "undefined" && location.search) {
+            const indices = queryToResults(location.search);
             initialDoneGames = toP(indices)
                 .map(Game.done)
                 .filter(game => undone.some(undoneGame => undoneGame.sameMatch(game)));
@@ -23,10 +23,7 @@ export function calcProps(setting: LeagueSetting, names: string[], doneGames: nu
             initialDoneGames = toP(defaultDoneGames).map(Game.done);
         }
     } catch (e) {
-        // ignore
-        if (typeof location !== "undefined") {
-            location.hash = "";
-        }
+        console.error(e);
     }
 
     function toP(indices: number[][]) {
@@ -40,18 +37,16 @@ export function calcProps(setting: LeagueSetting, names: string[], doneGames: nu
     return {players, setting, doneGames: done, undoneGames: undone, initialDoneGames};
 }
 
-function hashValueToResults(hashValue: string) {
-    return (hashValue ?? "")
-        .substring(2)
-        .split("__")
-        .filter(d => d !== "")
-        .map((d) => d
-            .split("_")
-            .filter(v => v !== "")
-            .map((n) => parseInt(n)));
+function queryToResults(search: string) {
+    const searchParams = new URLSearchParams(search);
+    return searchParams.getAll("done").map((s)=>(
+        s.split("-").map(Number)
+    ))
 }
 
 export function serializeDoneGames(selectedDoneGames: Game[]) {
-    const v = selectedDoneGames.map(g => g.serialize().join("_")).join("__")
-    return "d" + v;
+    const searchParams = new URLSearchParams();
+    selectedDoneGames.map(g => g.serialize().join("-"))
+        .forEach(result => searchParams.append("done", result));
+    return searchParams.toString();
 }

@@ -19,6 +19,7 @@ import PlayerTableModel from "~/junisen/models/PlayerTable";
 import {UndoneLog} from "~/junisen/models/Log";
 import {H2, H3} from "../styled/heading";
 import {serializeDoneGames} from "~/junisen/utils/dataConversion";
+import { useNavigate } from "remix";
 
 interface Props {
     playerTable: PlayerTableModel;
@@ -50,15 +51,12 @@ const League: FunctionComponent<Props> = React.memo(
             },
             initialDoneGames
         );
+        const navigate = useNavigate();
+        const newQuery = serializeDoneGames(selectedDoneGames)
         useEffect(() => {
-            if (location.hash === "" && selectedDoneGames.length === 0) return;
-            const newHash = serializeDoneGames(selectedDoneGames);
-            try {
-                history.replaceState("", document.title, window.location.pathname + "#" + newHash);
-            } catch (e) {
-                location.hash = newHash;
-            }
-        }, [selectedDoneGames.map(g => g.temp?.rank || "n").join(",")]);
+            if (location.search === newQuery || location.search === "?" + newQuery) return;
+            navigate(`${location.pathname}?${newQuery}`, {replace: true});
+        }, [newQuery]);
         const modelInstance = useMemo(() => {
             const model = new LeagueModel(playerTable, setting);
             doneGames.forEach(game => model.add(game));
