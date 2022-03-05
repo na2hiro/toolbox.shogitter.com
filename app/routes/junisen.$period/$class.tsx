@@ -55,7 +55,7 @@ export default function JunisenIndex() {
     const params = useParams();
     const {data, setting, pageId} = useLoaderData();
     const props = useMemo(() => {
-        return calcProps(setting, data.players, data.doneGames, data.undoneGames, data.defaultDoneGames);
+        return calcProps(setting, data.players, data.doneGames, data.undoneGames);
     }, [pageId]);
     const playerTable = useMemo(() => new PlayerTable(props.players), [pageId]);
     return (

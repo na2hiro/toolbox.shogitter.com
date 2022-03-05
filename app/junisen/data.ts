@@ -89,7 +89,8 @@ export function getPeriods() {
 }
 
 export function getClasses(period: string) {
-    return Object.keys(resultData[period]).sort();
+    return Object.entries(resultData[period])
+        .sort(([k1], [k2]) => k1.localeCompare(k2));
 }
 
 export function getData(period: string, clss: string) {

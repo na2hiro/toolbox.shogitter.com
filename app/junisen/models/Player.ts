@@ -1,7 +1,6 @@
 export default class Player {
     public win = 0;
     public lose = 0;
-    public order?: number;
     public rank?: number;
     public challenge?: boolean;
     public playoff?: boolean;
@@ -12,7 +11,7 @@ export default class Player {
     public abbrev: string;
     public numCombinations = -1;
 
-    constructor(public name: string) {}
+    constructor(public name: string, public order: number) {}
 
     public reset() {
         this.countDown = this.countChallenge = this.countPlayoff = 0;

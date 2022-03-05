@@ -16,10 +16,4 @@ export default class PlayerTable {
             }
         });
     }
-
-    public writeOrder() {
-        this.players.forEach((player, num) => {
-            player.order = num;
-        });
-    }
 }

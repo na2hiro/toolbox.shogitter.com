@@ -64,7 +64,6 @@ export default class League {
     public searched?: Array<{ players: any[]; games: any[] }>;
 
     constructor(private playerTable: PlayerTable, private setting: LeagueSetting) {
-        playerTable.writeOrder();
         playerTable.players.forEach(player => {
             this.map[player.name] = [];
         });
