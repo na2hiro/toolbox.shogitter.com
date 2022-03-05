@@ -46,7 +46,9 @@ function queryToResults(search: string) {
 
 export function serializeDoneGames(selectedDoneGames: Game[]) {
     const searchParams = new URLSearchParams();
-    selectedDoneGames.map(g => g.serialize().join("-"))
+    selectedDoneGames
+        .filter(game => game.players[0].order !== undefined)
+        .map(g => g.serialize().join("-"))
         .forEach(result => searchParams.append("done", result));
     return searchParams.toString();
 }

@@ -49,6 +49,9 @@ export default class Game {
     }
 
     public serialize(): number[] {
+        /*if(this.players[0].order === undefined || this.players[1].order){
+            throw new Error("Player order is undefined");
+        }*/
         return [this.players[0].order, this.players[1].order];
     }
 }
