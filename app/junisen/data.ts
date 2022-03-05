@@ -1,4 +1,5 @@
 import LeagueSetting from "~/junisen/models/LeagueSetting";
+import {serializeDone} from "~/junisen/utils/dataConversion";
 
 type Config = {
     players: string[];
@@ -89,12 +90,17 @@ export function getPeriods() {
 }
 
 export function getClasses(period: string) {
-    return Object.entries(resultData[period])
+    return Object.keys(resultData[period])
         .sort(([k1], [k2]) => k1.localeCompare(k2));
 }
 
 export function getData(period: string, clss: string) {
     return resultData[period][clss];
+}
+
+export function getPath(period: string, clss: string) {
+    const data = getData(period, clss);
+    return `/junisen/${period}/${clss}${data.defaultDoneGames ? "?" + serializeDone(data.defaultDoneGames) : ""}`;
 }
 
 export function getSetting(period: string, clss: string): LeagueSetting {

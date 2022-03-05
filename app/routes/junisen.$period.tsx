@@ -2,12 +2,20 @@ import {HeadersFunction, LoaderFunction, Outlet, redirect, useLoaderData} from "
 import LeftRightPane from "~/junisen/styled/LeftRightPane";
 import BoldNavLink from "~/junisen/styled/BoldNavLink";
 import {displayClass, displayPeriod} from "~/junisen/utils/display";
-import {getClasses, getPeriods} from "~/junisen/data";
+import {getClasses, getPath, getPeriods} from "~/junisen/data";
 import {MetaFunction, ShouldReloadFunction} from "@remix-run/react/routeModules";
 import {getJunisenMetas} from "~/junisen/utils/junisenMetas";
-import {serializeDone, serializeDoneGames} from "~/junisen/utils/dataConversion";
 
-type LoaderData = { classes: string[], period: string, periods: string[], defaultResultsForClasses: ([number, number] | undefined)[] };
+type Class = {
+    name: string;
+    path: string;
+}
+
+type LoaderData = {
+    classes: Class[],
+    period: string,
+    periods: string[],
+};
 export const loader: LoaderFunction = ({params, request}) => {
     const period = params.period!;
     const classes = getClasses(params.period!);
@@ -15,13 +23,17 @@ export const loader: LoaderFunction = ({params, request}) => {
         throw new Response("not found", {status: 404});
     }
     if (request.url.endsWith(`/${period}`) && classes.length === 1) {
-        throw redirect(`/junisen/${period}/${classes[0][0]}`);
+        throw redirect(getPath(period, classes[0]));
     }
     return {
         period,
         periods: getPeriods(),
-        classes: classes.map(([k, v]) => k),
-        defaultResultsForClasses: classes.map(([k, v]) => v.defaultDoneGames),
+        classes: classes.map((k) => {
+            return {
+                name: k,
+                path: getPath(period, k),
+            }
+        }),
     };
 };
 
@@ -32,7 +44,7 @@ export const headers: HeadersFunction = () => {
 }
 
 export const unstable_shouldReload: ShouldReloadFunction =
-    ({ params, submission, url, prevUrl }) => url.pathname !== prevUrl.pathname;
+    ({params, submission, url, prevUrl}) => url.pathname !== prevUrl.pathname;
 
 export const meta: MetaFunction = () => {
     return getJunisenMetas({
@@ -41,7 +53,7 @@ export const meta: MetaFunction = () => {
 };
 
 export default function JunisenIndex() {
-    const {classes, periods, period, defaultResultsForClasses} = useLoaderData<LoaderData>();
+    const {classes, periods, period} = useLoaderData<LoaderData>();
     return (
         <LeftRightPane
             left={<>
@@ -50,8 +62,11 @@ export default function JunisenIndex() {
                         <BoldNavLink to={`/junisen/${p}`}>{displayPeriod(p)}</BoldNavLink>
                         {p === period && (
                             <ul className={"list-disc ml-6"}>
-                                {classes.map((clss, i) => <li key={clss}><BoldNavLink
-                                    to={`/junisen/${period}/${clss}${defaultResultsForClasses[i] ? "?"+serializeDone(defaultResultsForClasses[i]) : ""}`}>{displayClass(clss)}</BoldNavLink></li>)}
+                                {classes.map(({name, path}) => <li key={name}>
+                                    <BoldNavLink to={path}>
+                                        {displayClass(name)}
+                                    </BoldNavLink>
+                                </li>)}
                             </ul>
                         )}
                     </li>)}
